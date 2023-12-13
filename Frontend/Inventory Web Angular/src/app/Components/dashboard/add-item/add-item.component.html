@@ -1,0 +1,45 @@
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: 111vh; ">
+
+    <app-admin-header [adminname]="adminname"></app-admin-header>
+
+    <div class="signup-form">
+        <form (ngSubmit)="addItem()" method="post">
+            <h2>Add Item</h2>
+            <div class="form-group">
+                <input type="hidden" class="form-control" name="itemId" placeholder="Item Id" required="required"
+                    [(ngModel)]="item.itemId">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="itemName" placeholder="Item Name" required="required"
+                    [(ngModel)]="item.itemName">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="itemCategory" placeholder="Category" required="required"
+                    [(ngModel)]="item.itemCategory">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="itemDescription" placeholder="Description"
+                    required="required" [(ngModel)]="item.itemDescription">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="itemPrice" placeholder="Price per item"
+                    required="required" [(ngModel)]="item.itemPrice">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="itemQuantity" placeholder="Quantity" required="required"
+                    [(ngModel)]="item.itemQuantity">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="vendorId" placeholder="Vendor ID" required="required"
+                    [(ngModel)]="item.vendorId">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    <app-footer></app-footer>

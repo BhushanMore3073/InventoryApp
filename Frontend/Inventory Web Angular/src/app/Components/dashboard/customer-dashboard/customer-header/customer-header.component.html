@@ -1,0 +1,40 @@
+<!-- Navbar -->
+<nav class="navbar navbar-light bg-primary  ">
+    <div class="d-flex inline-block w-100 text-center">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="navbar-brand mt-2">
+                <h2 class="text-white">Inventory Manager</h2>
+            </li>
+        </ul>
+        <p class="mt-4 text-white">Welcome {{custName}}</p>
+        <a class="button navigation" routerLink="">
+            <img src="/assets/admin.png" height="25px" width="25px">
+            <div class="logout">LOGOUT</div>
+        </a>
+    </div>
+</nav>
+<!-- second navbar -->
+<div class="card text-center border-0">
+    <div class="card-header d-flex justify-content-center">
+        <ul class="nav nav-pills mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="mx-5">
+                <button [routerLink]="['/customer-view-item',this.custName,this.custId]" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <!--submenu-->
+                    <i class="fs-4 bi-cart3"></i><span class="ms-1 d-none d-sm-inline">Items</span>
+                </button>
+            </li>
+            <li class="mx-5">
+                <button [routerLink]="['/cuatomer-purchase-history',this.custName,this.custId]" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">My Orders</span></button>
+            </li>
+            <li class="mx-5">
+                <button (click)="goToProfile()" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Profile</span> </button>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- background -->
+
+
+<!--   -->

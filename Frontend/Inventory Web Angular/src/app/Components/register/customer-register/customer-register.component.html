@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="signup-form">
+    <form (ngSubmit)="registerCustomer()" method="post">
+        <h2>Register</h2>
+        <!-- <div class="form-group">
+            <div class="row col-md-12 ">
+                <div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name"
+                        required="required"></div>
+                <div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name"
+                        required="required"></div>
+            </div>
+        </div> -->
+        <div class="form-group">
+            <input type="text" class="form-control" name="customerName" placeholder="Name" required="required" [(ngModel)]="customer.customerName">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="customerEmail" placeholder="Email" required="required" [(ngModel)]="customer.customerEmail">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="customerAddress" placeholder="Address" required="required" [(ngModel)]="customer.customerAddress">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" name="customerPhoneNO" placeholder="Phone Number" required="required" [(ngModel)]="customer.customerPhoneNo">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="customerPassword" placeholder="Password" required="required" [(ngModel)]="customer.customerPassword">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a routerLink="/customer-login">Login</a></div>
+</div>

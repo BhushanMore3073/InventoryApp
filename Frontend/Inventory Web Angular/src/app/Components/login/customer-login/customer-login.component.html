@@ -1,0 +1,34 @@
+<app-header></app-header>
+<app-check-login></app-check-login>
+<div class="bg-image" style=" 
+  background: #222 url('/assets/HomeBackground.png') center center no-repeat; 
+  background-size: cover; 
+  height:610px;">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn firs mt-2">
+        <img src="/assets/admin.png" id="icon" alt="User Icon" style="width: 40px; height: 40px;" />
+      </div>
+
+      <!-- Login Form -->
+      <form (ngSubmit)="login()">
+        <div class="form-outline mb-4 mt-2">
+          <input type="email" id="login" class="fadeIn second" name="customerEmail" placeholder="Customer : Enter Your Email" [(ngModel)]="customer.customerEmail">
+        </div>
+        <div class="form-outline mb-4">
+          <input type="password" id="password" class="fadeIn third" name="customerPassword" placeholder="password" [(ngModel)]="customer.customerPassword">
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" routerLink="/forgot-customer">Forgot Password?</a> &nbsp;&nbsp;&nbsp;
+        <a class="underlineHover" routerLink="/register-customer">Register Here !</a>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

@@ -1,0 +1,33 @@
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: 111vh; ">
+
+    <app-admin-header [adminname]="adminname"></app-admin-header>
+    <div class="container my-5">
+        <div class="mt-5">
+            <h1 style="align-items: center; color: aliceblue;"><i>All Vendors</i></h1>
+            <table class="table table-bordered text-dark bg-light">
+                <thead class="thead">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone No</th>
+                        <th>Address</th>
+                        <th colspan="2" class="text-center">Options</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <tr *ngFor="let dealer of dealers">
+                        <td>{{dealer.vendorName}}</td>
+                        <td>{{dealer.vendorEmail}}</td>
+                        <td>{{dealer.vendorPhone}}</td>
+                        <td>{{dealer.vendorAddress}}</td>
+                        <td><a (click)="edit(dealer)" class="btn btn-primary">Update</a></td>
+                        <td><button (click)="deleteDealer(dealer.vendorId)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,53 @@
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: 133vh; ">
+
+    <app-vendor-header [vendorId]="this.id" [vendorName]="this.name"></app-vendor-header>
+
+    <div class="container w-50 content-justify-center">
+        <div class="mt-5">
+            <h3 class="text-center">Update Item</h3>
+        </div>
+        <form #updateForm="ngForm" (ngSubmit)="updateItem()" method="post">
+            <div class="form-group">
+                <label for="itemId">Item Id</label>
+                <input type="number" disabled #itemId [(ngModel)]="itemUpdate.itemId" name="itemId" id="itemId"
+                    class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="itemName">Item Name</label>
+                <input type="text" #itemName [(ngModel)]="itemUpdate.itemName" name="itemName" id="itemName"
+                    class="form-control" placeholder="Item Name">
+            </div>
+            <div class="form-group">
+                <label for="itemCategory">Item Category</label>
+                <input type="text" #itemCategory [(ngModel)]="itemUpdate.itemCategory" name="itemCategory"
+                    id="itemCategory" class="form-control" placeholder="Category">
+            </div>
+            <div class="form-group">
+                <label for="itemDescription">Description</label>
+                <input type="text" #itemDescription [(ngModel)]="itemUpdate.itemDescription" name="itemDescription"
+                    id="itemDescription" class="form-control" placeholder="Description">
+            </div>
+            <div class="form-group">
+                <label for="itemPrice">Price</label>
+                <input type="number" #itemPrice [(ngModel)]="itemUpdate.itemPrice" name="itemPrice" id="itemPrice"
+                    class="form-control" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <label for="itemQuantity">Quantity</label>
+                <input type="number" #itemQuantity [(ngModel)]="itemUpdate.itemQuantity" name="itemQuantity"
+                    id="itemQuantity" class="form-control" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <label for="vendorId">Vendor Id</label>
+                <input type="number" #vendorId [(ngModel)]="itemUpdate.vendorId" name="vendorId" id="vendorId"
+                    class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn text-white w-100" style="background-color: #dd4b39;" data-bs-dismiss="modal">
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

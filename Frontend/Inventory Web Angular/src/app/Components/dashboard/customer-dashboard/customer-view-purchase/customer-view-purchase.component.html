@@ -1,0 +1,70 @@
+<app-customer-header [custName]="customer.customerName" [custId]="this.custId"></app-customer-header>
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: auto; ">
+
+    <div class="container d-flex justify-content-center p-5">
+        <div class="card w-50">
+            <div class="card-body mx-4">
+                <div class="container">
+                    <p class="my-5 mx-5" style="font-size: 30px;">Your Purchase Invoice</p>
+                    <div class="row">
+                        <ul class="list-unstyled pb-2">
+                            <hr><b>Customer Details</b>
+                            <hr>
+                            <li class="text-black">{{customer.customerName}}</li>
+                            <li class="text-muted mt-1"><span class="text-black">{{customer.customerPhoneNo}}</span>
+                            </li>
+                            <li class="text-black mt-1">{{customer.customerAddress}}</li>
+                        </ul>
+                        <hr>
+                        <ul class="list-unstyled pb-2">
+                            <b>Vendor Details</b>
+                            <hr>
+                            <li class="text-black">{{vendor.vendorName}}</li>
+                            <li class="text-muted mt-1"><span class="text-black">{{vendor.vendorPhone}}</span></li>
+                            <li class="text-black mt-1">{{vendor.vendorAddress}}</li>
+                        </ul>
+                        <hr style="border: 2px solid black;">
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <p>Product Name : {{item.itemName}}</p>
+                        </div>
+                        <div class="col-xl-2">
+                            <p class="float-end">₹{{item.itemPrice}}</p>
+                        </div>
+                        <div class="col-xl-10">
+                            <p>Category : {{item.itemCategory}}</p>
+                            <p>Description : {{item.itemDescription}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-10">
+                            <p>Quantity</p>
+                        </div>
+                        <div class="col-xl-2">
+                            <p class="float-end">{{this.purchase.purchaseQuantity}}
+                            </p>
+                        </div>
+                        <hr style="border: 2px solid black;">
+                    </div>
+                    <div class="row text-black">
+
+                        <div class="col-xl-12">
+                            <p class="float-end fw-bold">Total: ₹ {{item.itemPrice * this.purchase.purchaseQuantity}}
+                            </p>
+                        </div>
+                        <hr style="border: 2px solid black;">
+                    </div>
+                    <div class="text-center" style="margin-top: 90px;">
+                        <a [routerLink]="['/customer-dashboard',customer.customerName,customer.customerId]"><u
+                                class="text-primary">Back To Dashboard</u></a>
+                        <p class="pt-2">Dear <b>{{customer.customerName}}</b>. Thank you for your purchase !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

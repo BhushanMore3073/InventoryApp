@@ -1,0 +1,43 @@
+<app-customer-header [custName]="customer.customerName" [custId]="this.id"></app-customer-header>
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: 90vh; ">
+    
+    <div class="container w-25 content-justify-center ">
+        <div class="">
+            <h3 class="text-center pt-5">{{customer.customerName}}</h3>
+        </div>
+        <form #updateForm="ngForm" (ngSubmit)="updateCustomer()" method="post">
+            <div class="form-group">
+                <label for="customerId">Id</label>
+                <input type="number" disabled #customerId [(ngModel)]="customer.customerId" name="customerId"
+                    id="customerId" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+                <label for="customerName">Name</label>
+                <input type="text" #customerName [(ngModel)]="customer.customerName" name="customerName"
+                    id="customerName" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="customerEmail">Email</label>
+                <input type="email" #customerEmail [(ngModel)]="customer.customerEmail" name="customerEmail"
+                    id="customerEmail" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="customerPhoneNo">Phone No</label>
+                <input type="number" #customerPhoneNo [(ngModel)]="customer.customerPhoneNo" name="customerPhoneNo"
+                    id="customerPhoneNo" class="form-control" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="customerAddress">Address</label>
+                <input type="text" #customerAddress [(ngModel)]="customer.customerAddress" name="customerAddress"
+                    id="customerAddress" class="form-control" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn text-white w-100" style="background-color: #dd4b39;"
+                    data-bs-dismiss="modal">
+            </div>
+        </form>
+    </div>
+</div>
+<app-footer></app-footer>

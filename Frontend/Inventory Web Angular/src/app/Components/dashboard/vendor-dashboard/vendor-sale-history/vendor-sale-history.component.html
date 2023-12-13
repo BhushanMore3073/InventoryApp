@@ -1,0 +1,38 @@
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: 111vh; ">
+
+    <app-vendor-header [vendorId]="this.id" [vendorName]="this.name"></app-vendor-header>
+    <div class="container my-5">
+        <div class="mt-5">
+            <h1 style="align-items: left; color: rgb(230, 243, 255);"><i>All Sales</i></h1>
+            <table class="table table-bordered text-dark bg-light">
+                <thead class="thead">
+                    <tr>
+                        <th>Item Id</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Total Price</th>
+                        <th>Quantity</th>
+                        <th>Date</th>
+                        <th>Customer Name</th>
+                        <th colspan="2" class="text-center">Options</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <tr *ngFor="let sale of sales">
+                        <td>{{sale.itemId}}</td>
+                        <td>{{sale.itemName}}</td>
+                        <td>{{sale.pricePerItem}}</td>
+                        <td>{{sale.totalPrice}}</td>
+                        <td>{{sale.saleQuantity}}</td>
+                        <td>{{sale.saleDate}}</td>
+                        <td>{{sale.customerName}}</td>
+                        <td><a (click)="viewSales(sale)" class="btn btn-primary">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

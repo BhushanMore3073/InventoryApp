@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="signup-form">
+    <form (ngSubmit)="registerVendor()" method="post">
+        <h2>Register</h2>
+        <!-- <div class="form-group">
+            <div class="row col-md-12 ">
+                <div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name"
+                        required="required"></div>
+                <div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name"
+                        required="required"></div>
+            </div>
+        </div> -->
+        <div class="form-group">
+            <input type="text" class="form-control" name="vendorName" placeholder="Name" required="required" [(ngModel)]="dealer.vendorName">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="vendorEmail" placeholder="Email" required="required" [(ngModel)]="dealer.vendorEmail">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="vendorAddress" placeholder="Address" required="required" [(ngModel)]="dealer.vendorAddress">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" name="vendorPhoneNO" placeholder="Phone Number" required="required" [(ngModel)]="dealer.vendorPhone">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="vendorPassword" placeholder="Password" required="required" [(ngModel)]="dealer.vendorPassword">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+    <div class="text-center">Already have an account? <a routerLink="/dealer-login">Login</a></div>
+</div>

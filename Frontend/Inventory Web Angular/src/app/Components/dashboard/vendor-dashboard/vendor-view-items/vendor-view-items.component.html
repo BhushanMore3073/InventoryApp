@@ -1,0 +1,43 @@
+<div class="bg-image"
+    style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            opacity: 0.7; background-position: center; background-repeat: no-repeat; background-size: cover; height: 111vh; ">
+
+    <app-vendor-header [vendorId]="this.id" [vendorName]="this.name"></app-vendor-header>
+    <div class="container my-5">
+        <div class="mt-5">
+            <h1 style="align-items: left; color: aliceblue;"><i>All Items</i></h1>
+            <table class="table table-bordered text-dark bg-light">
+                <thead class="thead">
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Vendor Id</th>
+                        <th colspan="2" class="text-center">Options</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    <tr *ngFor="let item of items">
+                        <td>{{item.itemName}}</td>
+                        <td>{{item.itemCategory}}</td>
+                        <td>{{item.itemDescription}}</td>
+                        <td>{{item.itemPrice}}</td>
+                        <td>{{item.itemQuantity}}</td>
+                        <td>{{item.vendorId}}</td>
+                        <td><a (click)="edit(item.itemId)" class="btn btn-primary">Update</a></td>
+                        <td><button (click)="deleteItem(item.itemId)" class="btn btn-danger">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- update item form -->
+<!-- 
+
+    
+(click)="edit(item)"
+ -->

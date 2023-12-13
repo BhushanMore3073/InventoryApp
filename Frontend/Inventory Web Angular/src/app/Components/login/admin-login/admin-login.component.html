@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-check-login></app-check-login>
+<!-- Background image -->
+
+<div class="bg-image" style=" 
+  background: #222 url('/assets/HomeBackground.png') center center no-repeat; 
+  background-size: cover; 
+  height:610px;">
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+
+      <!-- Icon -->
+      <div class="fadeIn first mt-2">
+        <img src="/assets/admin.png" id="icon" alt="User Icon" style="width: 40px; height: 40px;" />
+      </div>
+
+      <!-- Login Form -->
+
+      <form (ngSubmit)="adminLogin()">
+        <div class="form-outline mb-4 mt-2">
+          <input type="text" id="ausername" class="fadeIn second" name="ausername" placeholder="Admin"
+            [(ngModel)]="admin.ausername">
+        </div>
+        <!-- [(ngModel)]="admin.ausername" -->
+        <div class="form-outline mb-4">
+          <input type="password" id="apassword" class="fadeIn second" name="apassword" placeholder="Passowrd"
+            [(ngModel)]="admin.apassword">
+        </div>
+        <!-- [(ngModel)]="admin.apassword" -->
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
